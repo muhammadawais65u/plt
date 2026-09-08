@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+:root {
+  /* ============ TYPOGRAPHY TOKENS ============ */
+  --font-display: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  --font-serif-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-pangram);
+  --font-sans-alt: "Jost", -apple-system, "Segoe UI", sans-serif;
+  /* ============ BRAND COLOR TOKENS ============ */
+  --tan: #c5811b;
+  --rust: #b5502e;
+  --cream: #f4efe6;
+  --ink: #2a2620;
+  --dark: #17130f;
+  --gold: #9c7a3c;
+  --bronze: #b08d57;
+  --brown-deep: #241d18;
+  --brown-soft: #523a27;
+  --surface: #d9d9d9;
+  --muted: #7a7468;
+  
+  /* ============ SECTION BACKGROUND COLORS ============ */
+  --bg-primary: #CCC3BB;
+  --bg-secondary: #29225C;
+  --bg-tertiary: #C1A243;
+
+  --bg-card: #29225C;
+  --bg-section: #1D2128;
+  --bg-dark-card: #1a1610;
+  --bg-dark-overlay: #1f1a14;
+  --bg-light: #F7F4EC;
+  --bg-mission: #1c1b19;
+  --bg-hero: #0a0a0a;
+  --bg-surface: #d9d9d9;
+  --nav-bg: #1D2128;
+  --nav-bg-top: transparent;
+  --nav-bg-scrolled: transparent;
+  --nav-bg-mobile: #000000;
+  
+  /* ============ ACCENT COLORS ============ */
+  --accent-gold: #D9B27C;
+  --accent-gold-dark: #B98D4F;
+  --accent-bronze: #c9a876;
+  --accent-blog: #d4a574;
+  --accent-cream: #f3efe6;
+  --accent-cream-dark: #f2ede4;
+  --accent-cream-light: #F4F0E6;
+  --accent-gold-light: #C7A46B;
+  --accent-gold-medium: #A9895A;
+  --accent-brown: #c8935a;
+  --accent-brown-light: #b08a5a;
+  
+  /* ============ TEXT COLORS ============ */
+  --text-primary: #EDE6D8;
+  --text-secondary: #C9BFAD;
+  --text-muted: #9a948a;
+  --text-dark: #211D17;
+  --text-dark-muted: #4A443A;
+  --text-dark-light: #8A8172;
+  --text-brown: #7C5A2C;
+  --text-cream: #d4c9a3;
+  --text-blue: #1c2b39;
+  --text-gray: #374151;
+  --text-linkedin: #0077b5;
+  --text-twitter: #1da1f2;
+  --text-dark-brown: #1c1a17;
+  --text-brown-muted: #84796a;
+  --text-cream-muted: #B7AFA2;
+  
+  /* ============ DECORATIVE COLORS ============ */
+  --decorative-line: #2b2823;
+  --decorative-blue: #4a7dab;
+  --decorative-divider: #3A342C;
+}
+/* app/globals.css */
+@layer utilities {
+  /* Chrome, Safari और Opera के लिए */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* IE, Edge और Firefox के लिए */
+  .scrollbar-none {
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+
+
+.paragraph {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-logo {
+  font-family: var(--font-pangram);
+}
+
+/* ============ SHARED TYPOGRAPHY UTILITIES ============ */
+h1,h2,h3,h4,h5,h6{
+      font-family: var(--font-display);
+}
+/* Small uppercase label (e.g. "BRAND PILLARS", "WHO WE ARE") */
+.eyebrow {
+  font-family: var(--font-sans-alt);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Large italic serif display heading */
+.display-title {
+  font-family: var(--font-serif-display);
+  font-size: clamp(48px, 8vw, 96px);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+/* Slide / step counter text */
+.counter-label {
+  font-family: var(--font-sans-alt);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ============ HERO SLIDER (Swiper) ============ */
+.hero-swiper .swiper-pagination {
+  position: static !important;
+}
+
+.swiper-slide-active .slide-bg {
+  animation: hero-zoom 5.5s ease-in-out forwards;
+}
+
+@keyframes hero-zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+.custom-hero-pagination .custom-bullet {
+  width: 8px !important;
+  height: 4px !important;
+  border-radius: 0 !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1 !important;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out !important;
+  margin: 0 !important;
+}
+
+.custom-hero-pagination .custom-bullet-active {
+  background: var(--rust) !important;
+  width: 24px !important;
+  height: 4px !important;
+  border-radius: 0 !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0b0c;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+}

@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_PUBLIC_API_URL = "https://backend-production-1c502.up.railway.app/api"
+  NEXT_PUBLIC_TINYMCE_API_KEY = "4a194n7jrseu3krs8fndx1a1f09uda5bo86f4c1ujqhqdqlz"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
